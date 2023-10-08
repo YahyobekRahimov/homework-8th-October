@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake Random Generator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        main {
+            background-color: rgb(196, 189, 249);
+        }
+
+        .container {
+            height: 100vh;
+            max-width: 1440px;
+            width: 100%;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 30px;
+            font-size: 40px;
+        }
+
+        input {
+            font-size: 30px;
+        }
+
+        input[type='submit'] {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="container">
+            <label for="neededNumber">What number do you need</label>
+            <input type="number" id="neededNumber">
+            <div class="result"></div>
+            <input onclick="submitted()" id="submitButton" type="submit">
+        </div>
+    </main>
+
+    <script>
+        function submitted() {
+            const NEEDED_NUMBER = document.getElementById('neededNumber').value;
+
+            let i = 0;
+            const maxIterations = 100;
+            const intervalDuration = 70;
+
+            function executeLoop() {
+                if (i < maxIterations) {
+                    let numbersDisplayed = Math.floor("9989" + Math.random() * (99999999 - 10000000 + 1) + 10000000);
+                    if (numbersDisplayed.toString()[4] === '5' || numbersDisplayed.toString()[4] === '6') {
+                        executeLoop();
+                    } else {
+                        if (numbersDisplayed / (10 ** 8) < 1) {
+                            executeLoop();
+                        } else {
+                            document.querySelector('.result').innerHTML = numbersDisplayed;
+                        }
+                    }
+
+                    i++;
+
+                    if (i === maxIterations) {
+                        clearInterval(intervalId); // Clear the interval when the desired number of iterations is reached
+                        document.querySelector('.result').innerHTML = NEEDED_NUMBER;
+                    }
+                }
+            }
+
+            const intervalId = setInterval(executeLoop, intervalDuration);
+        }
+    </script>
+</body>
+
+</html>
