@@ -5,40 +5,104 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/style.css">
-    <title>Document</title>
+    <title>Homework 8th October</title>
+
+    <style>
+        main {
+            background-color: #e8d6cb;
+        }
+
+        .container {
+            max-width: 1440px;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .main__container {
+            display: flex;
+            height: 100vh;
+            flex-direction: column;
+            align-items: start;
+            gap: 100px;
+            padding-top: 50px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #381627;
+            font-size: 30px;
+            position: relative;
+            transition: all 0.5s ease-out;
+            border-bottom: 2px #381627 dotted;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        a::before {
+            content: '';
+            height: 100%;
+            width: 0;
+            background: #d0ada7;
+            position: absolute;
+            left: 0;
+            top: 0;
+            transition: 0.5s all ease-out;
+        }
+
+        a:hover::before {
+            width: 50px;
+        }
+
+        a:hover {
+            padding-left: 50px;
+        }
+
+        ul {
+            list-style-type: none;
+            display: grid;
+            grid-template-columns: repeat(3, 200px);
+            row-gap: 30px;
+            column-gap: 100px;
+        }
+
+        h1 {
+            color: #381627;
+            font-weight: 500;
+        }
+    </style>
 </head>
 
 <body>
-
-    <!-- Header section -->
-
-    <header class="header">
-        <div class="container header__container">
-
-        </div>
-    </header>
-
-    <!-- Main -->
-
     <main>
-        <section class="">
-            <div class="container">
-
-            </div>
-        </section>
-
-        <section class="">
-            <div class="container">
-
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container footer__container">
-
+        <div class="container main__container">
+            <h1>
+                Coded by <a href="https://github.com/YahyobekRahimov">Rahimov Yahyobek</a>
+                <br>
+                Homework given date: 07.10.2023.
+                <br>
+                Homework submitted date: 08.10.2023.
+            </h1>
+            <ul>
+                <li><a href="./homework-files/if1.html">If-1</a></li>
+                <li><a href="./homework-files/if2.html">If-2</a></li>
+                <li><a href="./homework-files/if3.html">If-3</a></li>
+                <li><a href="./homework-files/if4.html">If-4</a></li>
+                <li><a href="./homework-files/if5.html">If-5</a></li>
+                <li><a href="./homework-files/if6.html">If-6</a></li>
+                <li><a href="./homework-files/if7.html">If-7</a></li>
+                <li><a href="./homework-files/if8.html">If-8</a></li>
+                <li><a href="./homework-files/if9.html">If-9</a></li>
+                <li><a href="./homework-files/if10.html">If-10</a></li>
+                <li><a href="./homework-files/if11.html">If-11</a></li>
+                <li><a href="./homework-files/if12.html">If-12</a></li>
+                <li><a href="./homework-files/if13.html">If-13</a></li>
+                <li><a href="./homework-files/if14.html">If-14</a></li>
+                <li><a href="./homework-files/if15.html">If-15</a></li>
+                <li><a href="./homework-files/Xarajat-hisoblagich.html">Xarajat hisoblagich</a></li>
+            </ul>
         </div>
-    </footer>
+    </main>
 </body>
 
 </html>

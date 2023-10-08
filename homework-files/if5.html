@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IF N5</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #result {
+            font-size: 5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="result"></h1>
+</body>
+
+<script>
+    alert('Salom! Men kiritilgan sonlardan nechtasi musbat va nechtasi manfiy ekanligini aniqlab beraman')
+    const a = prompt('Butun son kiriting: ');
+    const b = prompt('2-butun sonni kiriting: ');
+    const c = prompt('3-butun sonni kiriting: ');
+    let positiveNumberCount = 0;
+    let negativeNumberCount = 0;
+
+    if (a > 0) {
+        positiveNumberCount++;
+    } else if (a < 0) {
+        negativeNumberCount++;
+    }
+    if (b > 0) {
+        positiveNumberCount++;
+    } else if (b < 0) {
+        negativeNumberCount++;
+    }
+    if (c > 0) {
+        positiveNumberCount++;
+    } else if (c < 0) {
+        negativeNumberCount++;
+    }
+
+    document.getElementById('result').innerHTML = `Siz ${positiveNumberCount} ta musbat va ${negativeNumberCount} ta manfiy son kiritdingiz`
+</script>
+
+</html>

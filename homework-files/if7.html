@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IF N7</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #result {
+            font-size: 5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="result"></h1>
+</body>
+
+<script>
+    alert('Salom! Men kiritilgan sonlardan kichigini tartib raqamini aniqlab beraman')
+    const a = prompt('Butun son kiriting: ');
+    const b = prompt('2-butun sonni kiriting: ');
+    let min, order;
+    if (a < b) {
+        min = a;
+        order = 1;
+    } else if (b < a) {
+        min = b;
+        order = 2;
+    }
+    document.getElementById('result').innerHTML = `${min} ya'ni ${order}-raqam kichikroq`
+</script>
+
+</html>

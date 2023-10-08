@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Title -->
+
+    <title>IF-N1</title>
+
+    <!-- Styles -->
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 500;
+        }
+
+        #main {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .container {
+            max-width: 1440px;
+            width: 100%;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        .main__container {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            width: 400px;
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        #btnSubmit {
+            height: 50px;
+            border: 3px solid #292F33;
+            background-color: #e8fccf;
+            position: relative;
+            cursor: pointer;
+            text-decoration: none;
+            color: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #btnSubmit:hover span {
+            z-index: 4;
+            color: white;
+        }
+
+        #btnSubmit::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 100%;
+            background-color: #292F33;
+            bottom: 0;
+            left: 0;
+            transform-origin: center center;
+            transition: all 0.3s ease-out;
+            z-index: 1;
+        }
+
+        #btnSubmit:hover::after {
+            width: 100%;
+            height: 100%;
+        }
+
+        #integerInput {
+            height: 50px;
+            font-size: 45px;
+            appearance: none;
+            -moz-appearance: textfield;
+            width: 100%;
+        }
+
+        #integerInput:focus {
+            outline: 3px solid blue;
+        }
+
+        #integerInput-webkit-outer-spin-button,
+        #integerInput::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        #result {
+            font-size: 4rem;
+        }
+
+        #clear-button {
+            cursor: pointer;
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            display: none;
+        }
+
+        .input-wrapper {
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+    <main id="main">
+        <div class="container main__container">
+            <label for="integerInput">Enter an integer</label>
+            <div class="input-wrapper">
+                <input onfocus="reAttempt()" id="integerInput" type="number">
+                <img height="40" id="clear-button" src="../images/clear.svg" alt="clear button">
+            </div>
+            <div id="error-message"></div>
+            <a onclick="inputValidation()" id="btnSubmit"><span>Enter</span></a>
+            <div id="result"></div>
+        </div>
+    </main>
+    <script>
+        const CLEAR_BUTTON = document.getElementById('clear-button');
+        const PAGE_BACKGROUND = document.getElementById("main");
+        const INTEGER_INPUT = document.getElementById('integerInput');
+        const ERROR_MESSAGE = document.getElementById('error-message')
+
+        CLEAR_BUTTON.addEventListener('click', clearInput);
+        INTEGER_INPUT.addEventListener('input', clearButtonAppearance)
+        function clearButtonAppearance() {
+            if (INTEGER_INPUT.value !== '') {
+                CLEAR_BUTTON.style.display = 'block';
+            } else {
+                CLEAR_BUTTON.style.display = 'none';
+            }
+        };
+
+        function inputValidation() {
+            let userInput = INTEGER_INPUT.value;
+            if (Number.isInteger(parseInt(userInput))) {
+                PAGE_BACKGROUND.style.background = "#96e072"
+                ERROR_MESSAGE.innerHTML = null;
+            } else {
+                ERROR_MESSAGE.innerHTML = "It is not an integer😡";
+                PAGE_BACKGROUND.style.background = "#ff6565"; return;
+            } userInput = parseInt(userInput); if (userInput > 0) {
+                userInput++;
+            }
+            document.getElementById('result').innerHTML = userInput;
+
+        }
+        function clearInput() {
+            INTEGER_INPUT.value = null;
+        }
+        function reAttempt() {
+            PAGE_BACKGROUND.style.background = "#fff";
+        }
+    </script>
+</body>
+
+</html>

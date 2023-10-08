@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IF N10</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #result,
+        #result2 {
+            font-size: 5rem;
+            width: 100%;
+            height: 400px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="result"></h1>
+    <h2 id="result2"></h2>
+</body>
+
+<script>
+    let A = prompt('Butun son kiriting: ');
+    let B = prompt('2-butun sonni kiriting: ');
+    calculations();
+    function calculations() {
+        A = parseInt(A);
+        B = parseInt(B);
+        if (A != B) {
+            A += B;
+            B = A;
+        } else {
+            A = 0;
+            B = 0;
+        }
+    }
+    document.getElementById('result').innerHTML = `A = ${A}`
+    document.getElementById('result2').innerHTML = `B = ${B}`
+</script>
+
+</html>

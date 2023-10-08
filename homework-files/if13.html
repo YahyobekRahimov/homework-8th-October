@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IF N11</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #result,
+        #result2 {
+            font-size: 5rem;
+            width: 100%;
+            height: 400px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="result"></h1>
+    <h2 id="result2"></h2>
+</body>
+
+<script>
+    let A = prompt('Butun son kiriting: ');
+    let B = prompt('2-sonni kiriting: ');
+    let C = prompt('3-sonni kiriting: ')
+    let middleNumber, max;
+    calculations();
+    function calculations() {
+        A = parseInt(A);
+        B = parseInt(B);
+        C = parseInt(C);
+        if (A > B) {
+            if (B > C) {
+                middleNumber = B;
+            } else if (A > C) {
+                middleNumber = C;
+            } else {
+                middleNumber = A;
+            }
+        } else {
+            if (A > C) {
+                middleNumber = A;
+            } else if (C > B) {
+                middleNumber = B;
+            } else {
+                middleNumber = C;
+            }
+        }
+    }
+    document.getElementById('result').innerHTML = `O'rtanchasi = ${middleNumber}`
+</script>
+
+</html>

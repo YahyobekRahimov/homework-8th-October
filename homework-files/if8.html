@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IF N8</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #result,
+        #result2 {
+            font-size: 5rem;
+            margin: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="result"></h1>
+    <h2 id="result2"></h2>
+</body>
+
+<script>
+    alert('Salom! Men kiritilgan sonlardan birinchi kichigini keyin kattasini chiqarib beraman')
+    const a = prompt('Butun son kiriting: ');
+    const b = prompt('2-butun sonni kiriting: ');
+    let min, max;
+    calculations();
+    function calculations() {
+        if (a > b) {
+            max = a;
+            min = b;
+        } else if (a == b) {
+            document.getElementById('result').innerHTML = 'Ikkoviyam tengku, Brat :)';
+            return;
+        } else {
+            max = b;
+            min = a;
+        }
+        document.getElementById('result').innerHTML = `Kattasi: ${max} `
+        document.getElementById('result2').innerHTML = `Kichigi: ${min} `
+    }
+</script>
+
+</html>
