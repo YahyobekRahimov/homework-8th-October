@@ -63,7 +63,7 @@
                     if (numbersDisplayed.toString()[4] === '5' || numbersDisplayed.toString()[4] === '6') {
                         executeLoop();
                     } else {
-                        if (numbersDisplayed < 100000000) {
+                        if (numbersDisplayed < (10 ** 11)) {
                             executeLoop();
                         } else {
                             document.querySelector('.result').innerHTML = numbersDisplayed;
